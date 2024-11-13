@@ -15,8 +15,6 @@
 #include "task_list.h"
 #include "app.h"
 
-#include "giec_api_gpio.h"
-
 #define TAG "appBsp"
 
 /* Private variables ---------------------------------------------------------*/
@@ -27,8 +25,8 @@ static void btnCallback(void *);
 
 /* Function implementation ---------------------------------------------------*/
 void appBtnInit() {
-	GIEC_GPIO_KEY_CB_PARAM
-	giec_gpio_key_init();
+	fca_buttonInit(&button, 10, BUTTON_MODE_ID, readButton, btnCallback);
+	fca_buttonEnable(&button);
 }
 
 void appBtnPolling() {
@@ -39,7 +37,7 @@ void appBtnPolling() {
 void btnCallback(void *b) {
 	button_t *me_b = (button_t *)b;
 	switch (me_b->state) {
-	case BUTTON_SW_STATE_PRESSED: {S
+	case BUTTON_SW_STATE_PRESSED: {
 		APP_DBG("BUTTON_SW_STATE_PRESSED\n");
 	} break;
 

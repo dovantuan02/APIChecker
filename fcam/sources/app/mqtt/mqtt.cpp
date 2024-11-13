@@ -203,7 +203,6 @@ void mqtt::on_connect(int rc) {
 
 		/* send signal to LED task */
 		// driveIO.ledStatus.controlLedEvent(Indicator::EVENT::INTERNET_CONNECTION, Indicator::STATUS::SERVER_CONNECTED);
-		task_post_pure_msg(GW_TASK_NETWORK_ID, GW_NET_PLAY_VOICE_NETWORK_CONNECTED_REQ);
 	}
 	else {
 		// APP_DBG_MQTT("[MQTT_CONTROL] on_connect ERROR : %d\n", rc);

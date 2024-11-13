@@ -48,7 +48,7 @@ void *thread_btn_polling(void *arg) {
     APP_DBG("POLLING BUTTON \n");
 	appBtnInit();
     while (1) {
-        appBtnPolling();
+        // appBtnPolling();
         usleep(10000);
     }
 

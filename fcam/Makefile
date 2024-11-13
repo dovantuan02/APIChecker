@@ -34,7 +34,7 @@ ifdef RELEASE
 	endif
 else
 	OBJ_DIR		= _build_$(VENDOR_NAME)_$(FW_PRODUCT)-debug
-	NAME_MODULE	= fcam-$(FW_PRODUCT)-debug
+	NAME_MODULE	= APIChecker
 endif
 
 # Library option
